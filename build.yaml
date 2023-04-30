@@ -13,4 +13,5 @@
 #
 ---
 include:
-  - board: preonic_rev3
+  - board: nice_nano_v2
+    shield: atreus62
