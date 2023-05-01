@@ -5,6 +5,8 @@
 #define DEFAULT 0
 #define PISI 1
 #define SETUP 2
+#define FUNCTION 3
+#define NAVIGATION 4
 
 / {
     keymap {
@@ -26,6 +28,8 @@
 &kp LCTRL     &kp LGUI  &kp LALT &kp LGUI  &kp LSHFT &kp SPACE                 &kp SPACE &kp RSHFT &kp RGUI  &kp RALT  &kp RCTRL  &mo 1
                                                      &kp RET                   &kp BSPC
             >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+
         };
         
         pisi_layer {
@@ -44,6 +48,7 @@
 &tog 2 &trans &trans &trans &trans &trans                             &trans &trans &kp LEFT &kp DOWN &kp RIGHT &trans
                                    &trans                             &trans 
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
 
@@ -63,8 +68,46 @@
 &tog 2 &trans &trans &trans &trans &trans                                           &trans &trans &trans &trans &trans &trans
                                    &trans                                           &trans
             >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
+        function_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |BTCLEAR| BT0 | BT1 | BT2  | BT3  | BT4  |                   |      |       |       |      |       | BOOT  |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// | TOG 2 |     |     |      |      |      |       |    |      |      |       |       |      |       |       |
+
+            bindings = <
+&trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
+&trans &kp F1 &kp F2  &kp F3  &kp F4  &trans                                           &trans &trans &trans &trans &trans &trans
+&trans &kp F5 &kp F6  &kp F7  &kp F8  &trans                                           &trans &trans &trans &trans &trans &trans
+&trans &kp F9 &kp F10 &kp F11 &kp F12 &trans                                           &trans &trans &trans &trans &trans &trans
+&trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
+                                      &trans                                           &trans
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+        };
+
+        navigation_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |BTCLEAR| BT0 | BT1 | BT2  | BT3  | BT4  |                   |      |       |       |      |       | BOOT  |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// | TOG 2 |     |     |      |      |      |       |    |      |      |       |       |      |       |       |
+
+            bindings = <
+&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                       &trans  &kp BSPC &kp UP   &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                       &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans  &trans &trans &trans
+                                   &trans                       &trans
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+        };
 
 
 
