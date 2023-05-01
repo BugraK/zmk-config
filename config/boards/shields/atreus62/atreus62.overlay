@@ -50,8 +50,9 @@
         >;
     };
 
-    &right_encoder {
+   
+};    
+&right_encoder {
     status = "okay";
     };
-    
-};
+ 
