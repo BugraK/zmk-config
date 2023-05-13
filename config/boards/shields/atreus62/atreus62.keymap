@@ -9,8 +9,20 @@
 #define FUNCTION 4
 #define NAVIGATION 5
 
+// Specific keys
 #define HYPER LG(LS(LA(LCTRL)))
-// Symbol
+
+// Symbols
+#define SA_1 LS(LA(N1))
+#define SA_2 LS(LA(N2))
+#define SA_3 LS(LA(N3))
+#define SA_4 LS(LA(N4))
+#define SA_5 LS(LA(N5))
+#define SA_6 LS(LA(N6))
+#define SA_7 LS(LA(N7))
+#define SA_8 LS(LA(N8))
+#define SA_9 LS(LA(N9))
+#define SA_0 LS(LA(N0))
 
 
 / {
@@ -41,8 +53,8 @@
 &kp TAB       &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     &kp U     &kp I     &kp O     &kp P      &kp LBKT
 &mt HYPER ESC &kp A     &kp S    &kp D     &kp F     &kp G                     &kp H     &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
 &kp GRAVE     &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH   &kp RET
-&sk LCTRL     &kp LGUI  &sk LALT &sk LGUI  &td_caps  &lt 3 SPACE               &tog 3    &sk RSHFT &sk RGUI  &sk RALT  &sk RCTRL  &mo 1
-                                                                 &kp RET                   &lt 4 BSPC
+&sk LCTRL     &kp LGUI  &sk LALT &sk LGUI  &td_caps  &lt 4 SPACE               &tog 5    &sk RSHFT &sk RGUI  &sk RALT  &sk RCTRL  &mo 1
+                                                     &sl 3                     &lt 5 BSPC
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
 
@@ -97,23 +109,23 @@
 
 
             bindings = <
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-                                   &trans                       &trans
+&trans &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
+&trans &kp SA_1   &kp SA_2   &kp SA_3   &kp SA_4   &kp SA_5             &kp SA_6   &kp SA_7   &kp SA_8   &kp SA_9   &kp SA_0   &trans
+&trans &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)           &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
+&trans &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4) &kp LA(N5)           &kp LA(N6) &kp LA(N7) &kp LA(N8) &kp LA(N9) &kp LA(N0) &trans
+&trans &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
+                                                   &trans               &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         function_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |BTCLEAR| BT0 | BT1 | BT2  | BT3  | BT4  |                   |      |       |       |      |       | BOOT  |
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// | TOG 2 |     |     |      |      |      |       |    |      |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |       |    |  DEL |      |       |       |      |       |       |
 
             bindings = <
 &trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
@@ -121,7 +133,7 @@
 &trans &kp F5 &kp F6  &kp F7  &kp F8  &trans                                           &trans &trans &trans &trans &trans &trans
 &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans                                           &trans &trans &trans &trans &trans &trans
 &trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
-                                      &trans                                           &trans
+                                      &trans                                           &kp DEL
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
@@ -136,12 +148,12 @@
 
 
             bindings = <
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &trans &trans &trans                       &trans  &trans   &trans   &trans    &trans &trans
-                                   &trans                       &trans
+&trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
+&trans &trans &trans &kp LC(LS(TAB)) &kp LC(TAB) &trans         &trans  &kp BSPC &kp UP   &trans    &trans &trans
+&trans &trans &trans &kp LG(LS(TAB)) &kp LG(TAB) &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans &trans &trans &kp LA(LS(TAB)) &kp LA(TAB) &trans         &trans  &trans   &trans   &trans    &trans &trans
+&trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
+                                                 &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
