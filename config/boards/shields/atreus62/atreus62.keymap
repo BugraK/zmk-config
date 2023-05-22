@@ -12,8 +12,22 @@
 #define FUNCTION 4
 #define NAVIGATION 5
 
+/* Special keycodes */
 #define XXX &none
 #define ___ &trans
+#define HYPER LG(LS(LA(LCTRL)))
+
+// Symbols
+#define SA_1 LS(LA(N1))
+#define SA_2 LS(LA(N2))
+#define SA_3 LS(LA(N3))
+#define SA_4 LS(LA(N4))
+#define SA_5 LS(LA(N5))
+#define SA_6 LS(LA(N6))
+#define SA_7 LS(LA(N7))
+#define SA_8 LS(LA(N8))
+#define SA_9 LS(LA(N9))
+#define SA_0 LS(LA(N0))
 
 /* Global settings */
 
@@ -57,21 +71,16 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 //MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 //MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
+/* Caps-word, num-word and smart-mouse */
 
-// Specific keys
-#define HYPER LG(LS(LA(LCTRL)))
-
-// Symbols
-#define SA_1 LS(LA(N1))
-#define SA_2 LS(LA(N2))
-#define SA_3 LS(LA(N3))
-#define SA_4 LS(LA(N4))
-#define SA_5 LS(LA(N5))
-#define SA_6 LS(LA(N6))
-#define SA_7 LS(LA(N7))
-#define SA_8 LS(LA(N8))
-#define SA_9 LS(LA(N9))
-#define SA_0 LS(LA(N0))
+// tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
+ZMK_BEHAVIOR(smart_shft, mod_morph,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+&caps_word {  // mods deactivate caps-word, requires PR #1441
+    /delete-property/ ignore-modifiers;
+};
 
 
 / {
@@ -98,12 +107,12 @@ MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
 // | LCTL  | LGUI  | LALT |  GRAV |  | EQL  | DEL | BKSP| | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |  MO 1 |
 
             bindings = <
-&kp N1        &kp N2    &kp N3   &kp N4    &kp N5    &kp N6                    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS  &kp EQUAL
-&kp TAB       &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     &kp U     &kp I     &kp O     &kp P      &kp LBKT
-&mt HYPER ESC &hml LCTRL A     &hml LALT S    &hml LGUI D     &hml LSHFT F     &kp G                     &kp H     &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
-&kp GRAVE     &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH   &kp RET
-&sk LCTRL     &kp LGUI  &sk LALT &sk LGUI  &td_caps  &lt 4 SPACE               &tog 5    &sk RSHFT &sk RGUI  &sk RALT  &sk RCTRL  &mo 1
-                                                     &sl 3                     &lt 5 BSPC
+&kp N1          &kp N2       &kp N3      &kp N4      &kp N5       &kp N6             &kp N7 &kp N8       &kp N9      &kp N0      &kp MINUS       &kp EQUAL
+&kp TAB         &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y  &kp U        &kp I       &kp O       &kp P           &kp LBKT
+&mt HYPER ESC   &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H  &hmr RSHFT J &hmr RGUI K &hmr LALT L &hmr LCTRL SEMI &kp SQT
+&kp NON_US_BSLH &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N  &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
+&sk LCTRL       &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt 4 SPACE        &tog 5 &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
+                                                                  &sl 3              &lt 5 BSPC
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
 
