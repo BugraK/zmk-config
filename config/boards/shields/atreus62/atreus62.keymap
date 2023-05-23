@@ -91,7 +91,7 @@ ZMK_BEHAVIOR(swap_N, tri_state,
 )
 
 ZMK_BEHAVIOR(swap_P, tri_state,
-    bindings = <&kt LGUI>, <&kp LS(TAB)>, <&kt LGUIT>;
+    bindings = <&kt LGUI>, <&kp LS(TAB)>, <&kt LGUI>;
     //ignored-key-positions = <LT2>;
 )
 
