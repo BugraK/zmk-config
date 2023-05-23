@@ -85,9 +85,9 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 /* Custom behaviors */
 
 // Alt+Tab swapper, requires PR #1366
-ZMK_BEHAVIOR(swap_N, tri_state,
+ZMK_BEHAVIOR(swap, tri_state,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-    ignored-key-positions = <LH1>;
+    ignored-key-positions = <LB1 LH1>;
 )
 
 ZMK_BEHAVIOR(swap_P, tri_state,
@@ -210,7 +210,7 @@ ZMK_BEHAVIOR(swap_P, tri_state,
             bindings = <
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &kp LC(LS(TAB)) &kp LC(TAB) &trans         &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &swap_P         &swap_N     &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans &trans &trans &trans          &swap       &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
 &trans &trans &trans &kp LA(LS(TAB)) &kp LA(TAB) &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
                                                  &trans         &trans
