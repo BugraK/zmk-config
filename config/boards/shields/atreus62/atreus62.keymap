@@ -82,18 +82,20 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     /delete-property/ ignore-modifiers;
 };
 
+/* Custom behaviors */
+
+// Alt+Tab swapper, requires PR #1366
+ZMK_BEHAVIOR(swap_N, tri_state,
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+    ignored-key-positions = <LH1>;
+)
+
+ZMK_BEHAVIOR(swap_P, tri_state,
+    bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
+    //ignored-key-positions = <LT2>;
+)
 
 / {
-
-    behaviors {
-        td_caps: tap_dance_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -107,11 +109,11 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 // | LCTL  | LGUI  | LALT |  GRAV |  | EQL  | DEL | BKSP| | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |  MO 1 |
 
             bindings = <
-&kp N1          &kp N2       &kp N3      &kp N4      &kp N5       &kp N6             &kp N7 &kp N8       &kp N9      &kp N0      &kp MINUS       &kp EQUAL
-&kp TAB         &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y  &kp U        &kp I       &kp O       &kp P           &kp LBKT
-&mt HYPER ESC   &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H  &hmr RSHFT J &hmr RGUI K &hmr LALT L &hmr LCTRL SEMI &kp SQT
-&kp NON_US_BSLH &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N  &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
-&sk LCTRL       &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt 4 SPACE        &tog 5 &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
+&kp N1        &kp N2       &kp N3      &kp N4      &kp N5       &kp N6             &kp N7 &kp N8       &kp N9      &kp N0      &kp MINUS       &kp EQUAL
+&kp TAB       &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y  &kp U        &kp I       &kp O       &kp P           &kp LBKT
+&mt HYPER ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H  &hmr RSHFT J &hmr RGUI K &hmr LALT L &hmr LCTRL SEMI &kp SQT
+&kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N  &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
+&sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt 4 SPACE        &tog 5 &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
                                                                   &sl 3              &lt 5 BSPC
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
@@ -208,7 +210,7 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
             bindings = <
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &kp LC(LS(TAB)) &kp LC(TAB) &trans         &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &kp LG(LS(TAB)) &kp LG(TAB) &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans &trans &trans &swap_P         &swap_N     &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
 &trans &trans &trans &kp LA(LS(TAB)) &kp LA(TAB) &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
                                                  &trans         &trans
