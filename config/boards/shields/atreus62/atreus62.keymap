@@ -210,7 +210,7 @@ ZMK_BEHAVIOR(swap_P, tri_state,
             bindings = <
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &kp LC(LS(TAB)) &kp LC(TAB) &trans         &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &trans          &swap       &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+&trans &trans &trans &swap           &trans      &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
 &trans &trans &trans &kp LA(LS(TAB)) &kp LA(TAB) &trans         &trans  &trans   &trans   &trans    &trans &trans
 &trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
                                                  &trans         &trans
