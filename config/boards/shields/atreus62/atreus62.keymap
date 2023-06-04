@@ -109,12 +109,19 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 // | LCTL  | LGUI  | LALT |  GRAV |  | EQL  | DEL | BKSP| | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |  MO 1 |
 
             bindings = <
-&kp N1        &kp N2       &kp N3      &kp N4      &kp N5       &kp N6             &kp N7 &kp N8       &kp N9      &kp N0      &kp MINUS       &kp EQUAL
-&kp TAB       &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y  &kp U        &kp I       &kp O       &kp P           &kp LBKT
-&mt HYPER ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H  &hmr RSHFT J &hmr RGUI K &hmr LALT L &hmr LCTRL SEMI &kp SQT
-&kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N  &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
-&sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt 4 SPACE        &tog 5 &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
-                                                                  &sl 3              &lt 5 BSPC
+//╭─────────────┬────────────┬───────────┬───────────┬────────────┬───────────╮ ╭──╮ ╭──────────┬─────────────┬─────────────┬─────────────┬──────────┬─────────╮
+   &kp N1        &kp N2       &kp N3      &kp N4      &kp N5       &kp N6             &kp N7     &kp N8       &kp N9      &kp N0      &kp MINUS       &kp EQUAL
+//├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
+   &kp TAB       &kp Q        &kp W       &kp E       &kp R        &kp T              &kp Y      &kp U        &kp I       &kp O       &kp P           &kp LBKT
+//├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
+   &mt HYPER ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H      &hmr RSHFT J &hmr RGUI K &hmr LALT L &hmr LCTRL SEMI &kp SQT
+//├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
+   &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
+//├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
+   &sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt 4 SPACE        &tog 5     &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
+//├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
+                                                                   &sl 3              &lt 5 BSPC
+//╰──────╯                                                        ╰───────────╯ ╰──╯ ╰──────────╯                                           
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
 
@@ -130,11 +137,11 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 
             bindings = <
 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                             &kp F7 &kp F8 &kp F9   &kp F10  &kp F11   &kp F12
-&trans &trans &trans &trans &trans &trans                             &trans &trans &trans   &trans   &trans    &trans
-&trans &trans &trans &trans &trans &trans                             &trans &trans &trans   &trans   &trans    &trans
-&trans &trans &trans &trans &trans &trans                             &trans &trans &trans   &kp UP   &trans    &trans
-&tog 2 &trans &trans &trans &trans &trans                             &trans &trans &kp LEFT &kp DOWN &kp RIGHT &trans
-                                   &trans                             &trans 
+___ ___ ___ ___ ___ ___                             ___ ___ ___   ___   ___    ___
+___ ___ ___ ___ ___ ___                             ___ ___ ___   ___   ___    ___
+___ ___ ___ ___ ___ ___                             ___ ___ ___   &kp UP   ___    ___
+&sl 2 ___ ___ ___ ___ ___                             ___ ___ &kp LEFT &kp DOWN &kp RIGHT ___
+                                   &kp LA(LG(C_EJECT))                             ___ 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -149,12 +156,12 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 // | TOG 2 |     |     |      |      |      |       |    |      |      |       |       |      |       |       |
 
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &trans &trans &trans &trans &trans &bootloader
-&trans &trans &trans &trans &trans &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                                           &trans &trans &trans &trans &trans &trans
-&tog 2 &trans &trans &trans &trans &trans                                           &trans &trans &trans &trans &trans &trans
-                                   &trans                                           &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         ___ ___ ___ ___ ___ &bootloader
+___ ___ ___ ___ ___ ___                                           ___ ___ ___ ___ ___ ___
+___ ___ ___ ___ ___ ___                                           ___ ___ ___ ___ ___ ___
+___ ___ ___ ___ ___ ___                                           ___ ___ ___ ___ ___ ___
+___ ___ ___ ___ ___ ___                                           ___ ___ ___ ___ ___ ___
+                                   &sys_reset                                           &sys_reset
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
@@ -169,12 +176,12 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 
 
             bindings = <
-&trans &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
-&trans &kp SA_1   &kp SA_2   &kp SA_3   &kp SA_4   &kp SA_5             &kp SA_6   &kp SA_7   &kp SA_8   &kp SA_9   &kp SA_0   &trans
-&trans &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)           &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
-&trans &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4) &kp LA(N5)           &kp LA(N6) &kp LA(N7) &kp LA(N8) &kp LA(N9) &kp LA(N0) &trans
-&trans &trans     &trans     &trans     &trans     &trans               &trans     &trans     &trans     &trans     &trans     &trans
-                                                   &trans               &trans
+___ ___     ___     ___     ___     ___               ___     ___     ___     ___     ___     ___
+___ &kp SA_1   &kp SA_2   &kp SA_3   &kp SA_4   &kp SA_5             &kp SA_6   &kp SA_7   &kp SA_8   &kp SA_9   &kp SA_0   ___
+___ &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)           &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) ___
+___ &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4) &kp LA(N5)           &kp LA(N6) &kp LA(N7) &kp LA(N8) &kp LA(N9) &kp LA(N0) ___
+___ ___     ___     ___     ___     ___               ___     ___     ___     ___     ___     ___
+                                                   ___               ___
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
@@ -188,12 +195,12 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 // |       |     |     |      |      |      |       |    |  DEL |      |       |       |      |       |       |
 
             bindings = <
-&trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &kp F1 &kp F2  &kp F3  &kp F4  &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &kp F5 &kp F6  &kp F7  &kp F8  &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &kp F9 &kp F10 &kp F11 &kp F12 &trans                                           &trans &trans &trans &trans &trans &trans
-&trans &trans &trans  &trans &trans   &trans                                           &trans &trans &trans &trans &trans &trans
-                                      &trans                                           &kp DEL
+___ ___ ___  ___ ___   ___                                           ___ ___ ___ ___ ___ ___
+___ ___ ___  &kp LC(TAB)  ___  ___                                           ___ &kp F1 &kp F2  &kp F3  &kp F4 ___
+___ ___ ___  &swap  ___  ___                                           ___ &kp F5 &kp F6  &kp F7  &kp F8 ___
+___ ___ ___ &kp LA(TAB) ___ ___                                           ___ &kp F9 &kp F10 &kp F11 &kp F12 ___
+___ ___ ___  ___ ___   ___                                           ___ ___ ___ ___ ___ ___
+                                      ___                                           &kp DEL
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
@@ -208,24 +215,24 @@ ZMK_BEHAVIOR(swap_P, tri_state,
 
 
             bindings = <
-&trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &kp LC(LS(TAB)) &kp LC(TAB) &trans         &trans  &kp BSPC &kp UP   &trans    &trans &trans
-&trans &trans &trans &swap           &trans      &trans         &kp DEL &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-&trans &trans &trans &kp LA(LS(TAB)) &kp LA(TAB) &trans         &trans  &trans   &trans   &trans    &trans &trans
-&trans &trans &trans &trans          &trans      &trans         &trans  &trans   &trans   &trans    &trans &trans
-                                                 &trans         &trans
+___ ___ ___ ___          ___      ___         ___  ___   ___   ___    ___ ___
+___ ___ ___ &kp LC(LS(TAB)) &kp LC(TAB) ___         ___  &kp BSPC &kp UP   ___    ___ ___
+___ ___ ___ &swap           ___      ___         &kp DEL &kp LEFT &kp DOWN &kp RIGHT ___ ___
+___ ___ ___ &kp LA(LS(TAB)) &kp LA(TAB) ___         ___  ___   ___   ___    ___ ___
+___ ___ ___ ___          ___      ___         ___  ___   ___   ___    ___ ___
+                                                 ___         ___
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
 
 
-//&trans &trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans &trans
-//&trans &trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans &trans
-//&trans &trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans &trans
-//&trans &trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans &trans
-//&trans &trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans &trans
-//                                   &trans                             &trans
+//___ ___ ___ ___ ___ ___                             ___ ___ ___ ___ ___ ___
+//___ ___ ___ ___ ___ ___                             ___ ___ ___ ___ ___ ___
+//___ ___ ___ ___ ___ ___                             ___ ___ ___ ___ ___ ___
+//___ ___ ___ ___ ___ ___                             ___ ___ ___ ___ ___ ___
+//___ ___ ___ ___ ___ ___                             ___ ___ ___ ___ ___ ___
+//                                   ___                             ___
 
 
     };
