@@ -9,7 +9,7 @@
 #define PISI 1
 #define SETUP 2
 #define SYMBOL 3
-#define FUNCTION 4
+#define FN 4
 #define NAVIGATION 5
 
 /* Special keycodes */
@@ -168,7 +168,7 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT    &kp FSLH        &kp RET
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
-   &sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt_spc 4          &tog 5     &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
+   &sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt_spc FN 0       &tog 5     &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
                                                                    &sl 3              &lt 5 BSPC
 //                                                                ╰───────────╯ ╰──╯ ╰──────────╯                                           
@@ -247,7 +247,7 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
-        function_layer {
+        fn_layer {
             bindings = <
 //╭───┬────┬────┬─────────────┬────┬────╮ ╭───────╮ ╭────────┬────────┬────────┬────────┬─────────┬───╮
    ___  ___  ___  ___          ___  ___              ___      ___      ___      ___      ___       ___
