@@ -133,10 +133,10 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
     bindings = <&mo>, <&spc_morph>;
 )
 // tap: space | double tap: dot -> space -> sticky shift
-ZMK_BEHAVIOR(dot_ios, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp DOT>, <&dot_spc>;
-)
+//ZMK_BEHAVIOR(dot_ios, tap_dance,
+//    tapping-term-ms = <200>;
+//    bindings = <&kp DOT>, <&dot_spc>;
+//)
 
 
 // misc aliases
@@ -166,7 +166,7 @@ ZMK_BEHAVIOR(dot_ios, tap_dance,
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &mt HYPER ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H      &hmr RSHFT J &hmr RGUI K &hmr RALT L &hmr RCTRL SEMI &kp SQT
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
-   &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &dot_ios    &kp FSLH        &kp RET
+   &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT    &kp FSLH        &kp RET
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt_spc 4          &tog 5     &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
