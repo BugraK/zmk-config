@@ -5,14 +5,14 @@
 #include "../../zmk-nodefree-config/helper.h"
 #include "../../zmk-nodefree-config/keypos_def/keypos_62keys.h"
 
-#define DEFAULT 0
+#define DEF 0
 #define PISI 1
-#define SETUP 2
-#define SYMBOLS 3
+#define SYS 2
+#define SYM 3
 #define FN 4
-#define NAVIGATION 5
+#define NAV 5
 
-//#include "combos.dtsi"  // requires layer aliases
+#include "combos.dtsi"  // requires layer aliases
 //#include "mouse.dtsi"
 
 /* Special keycodes */
