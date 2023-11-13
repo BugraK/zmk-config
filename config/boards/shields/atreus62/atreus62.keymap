@@ -5,12 +5,15 @@
 #include "../../zmk-nodefree-config/helper.h"
 #include "../../zmk-nodefree-config/keypos_def/keypos_62keys.h"
 
-#define DEFAULT 0
+#define DEF 0
 #define PISI 1
-#define SETUP 2
-#define SYMBOL 3
+#define SYS 2
+#define SYM 3
 #define FN 4
-#define NAVIGATION 5
+#define NAV 5
+
+#include "combos.dtsi"  // requires layer aliases
+//#include "mouse.dtsi"
 
 /* Special keycodes */
 #define XXX &none
@@ -67,9 +70,9 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
-//MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
-//MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
+//MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo (from urob's config)
+//MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "      "   "       "
+//MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "      "   "       "
 
 /* Caps-word, num-word and smart-mouse */
 
@@ -166,7 +169,7 @@ ZMK_BEHAVIOR(dot_ios, tap_dance,
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &mt HYPER ESC &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G              &kp H      &hmr RSHFT J &hmr RGUI K &hmr RALT L &hmr RCTRL SEMI &kp SQT
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
-   &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &dot_ios    &kp FSLH        &kp RET
+   &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &sk LCTRL     &kp LGUI     &sk LALT    &sk LGUI    &smart_shft  &lt_spc FN 0       &tog 5     &sk RSHFT    &sk RGUI    &sk RALT    &sk RCTRL       &mo 1
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
