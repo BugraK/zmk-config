@@ -16,17 +16,20 @@
 #define COMBO_TERM_SLOW 30
 
 // make homerow combos tap-only (so HRMs can be chorded instantaneously)
-//#define HRC_TAB    &hml         LA(LCTRL) TAB
+#define HRC_TAB    &hml         LA(LCTRL) TAB
 //#define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
 //#define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 //#define HRC_RPAR   &hmr_rpar_gt LA(LCTRL) 0
 
 /* Horizontal combos - left hand */
+ZMK_COMBO(tab,   HRC_TAB,       LB3 LB4,     DEF         , COMBO_TERM_FAST)
 
 /* Horizontal combos - right hand */
 
 /* Vertical combos - left hand */
 
 /* Vertical combos - right hand */
-ZMK_COMBO(bslh,  &kp BSLH,      RB1 RF1,     DEF        , COMBO_TERM_SLOW)
-ZMK_COMBO(rbkt,  &kp RBKT,      RB2 RF2,     DEF        , COMBO_TERM_SLOW)
+ZMK_COMBO(bslh,   &kp BSLH,      RB1 RM1,     DEF        , COMBO_TERM_SLOW)
+ZMK_COMBO(rbkt,   &kp RBKT,      RB2 RM2,     DEF        , COMBO_TERM_SLOW)
+ZMK_COMBO(copy,   &kp LG(V),     RB1 RF1,     DEF        , COMBO_TERM_SLOW)
+ZMK_COMBO(paste,  &kp LG(C),     RB2 RF2,     DEF        , COMBO_TERM_SLOW)
