@@ -5,7 +5,7 @@
    | LB0 LB1 LB2 LB3 LB4 LB5 |   | RB0 RB1 RB2 RB3 RB4 RB5 |
    | LF0 LF1 LF2 LF3 LF4 LF5 |   | RF0 RF1 RF2 RF3 RF4 RF5 |
    | LH0 LH1 LH2 LH3 LH4 LH5 |   | RH0 RH1 RH2 RH3 RH4 RH5 |
-   ╰──────────────────╮ LEC  |   | REC ╭───────────────────╯
+   ╰──────────────────╮  LEC |   | REC ╭───────────────────╯
                       ╰──────╯   ╰─────╯ */
 
 // use require-prior-idle-ms for combos
@@ -16,7 +16,11 @@
 #define COMBO_TERM_SLOW 30
 
 // make homerow combos tap-only (so HRMs can be chorded instantaneously)
-#define HRC_TAB    &hml         LG(LSHFT) TAB
+// match to homerow mods on default keymap
+
+// │ LB1 LB2 LB3 LB4 LB5 │ │ RB0 RB1 RB2 RB3 RB4 │
+// │ LC  LA  LG  LS  --- │ │ --- RS  RG  RA  RC  │
+#define HRC_TAB    &hml         LS(LGUI) TAB
 //#define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
 //#define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 //#define HRC_RPAR   &hmr_rpar_gt LA(LCTRL) 0
