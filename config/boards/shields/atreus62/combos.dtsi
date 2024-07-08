@@ -38,5 +38,6 @@ ZMK_COMBO(esc,   HRC_ESC,       LB3 LB4,     DEF         , COMBO_TERM_FAST)
 /* Vertical combos - right hand */
 ZMK_COMBO(bslh,   &kp BSLH,      RB1 RM1,     DEF        , COMBO_TERM_SLOW)
 ZMK_COMBO(rbkt,   &kp RBKT,      RB2 RM2,     DEF        , COMBO_TERM_SLOW)
+ZMK_COMBO(lbkt,   &kp LBKT,      RB3 RM3,     DEF        , COMBO_TERM_SLOW)
 ZMK_COMBO(copy,   &kp LG(V),     RB1 RF1,     DEF        , COMBO_TERM_SLOW)
 ZMK_COMBO(paste,  &kp LG(C),     RB2 RF2,     DEF        , COMBO_TERM_SLOW)
