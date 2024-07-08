@@ -158,6 +158,15 @@ ZMK_BEHAVIOR(dot_ios, tap_dance,
 #define VOL_DOWN    &hmr LCTRL C_VOL_DN
 
 / {
+   
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <3 4>;
+            then-layer = <5>;
+        };
+    };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -180,7 +189,7 @@ ZMK_BEHAVIOR(dot_ios, tap_dance,
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &kp GRAVE     &kp Z        &kp X       &kp C       &kp V        &kp B              &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RET
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
-   &sk LCTRL     &kp CAPS     &sk LALT    &sk LGUI    &smart_shft  &lt_spc FN 0       &lt 5 BSPC &sk RSHFT    &tog 5      &sk RGUI    &sk RALT        &mo 1
+   &sk LCTRL     &kp CAPS     &sk LALT    &sk LGUI    &smart_shft  &lt_spc FN 0       &lt 4 BSPC &sk RSHFT    &tog 5      &sk RGUI    &sk RALT        &mo 1
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
                                                                    &os_rpt MOD 0      &mo 6
 //                                                                ╰───────────╯ ╰──╯ ╰──────────╯                                           
