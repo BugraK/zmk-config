@@ -75,6 +75,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 //MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "      "   "       "
 //MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "      "   "       "
 
+ZMK_BEHAVIOR(osm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&key_repeat>;
+)
+
 /* Caps-word, num-word and smart-mouse */
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
@@ -174,7 +181,7 @@ ZMK_BEHAVIOR(dot_ios, tap_dance,
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
    &sk LCTRL     &kp CAPS     &sk LALT    &sk LGUI    &smart_shft  &lt_spc FN 0       &lt 5 BSPC &sk RSHFT    &tog 5      &sk RGUI    &sk RALT        &mo 1
 //├─────────────┼────────────┼───────────┼───────────┼────────────┼───────────┤      ├──────────┼────────────┼───────────┼───────────┼───────────────┼─────────┤
-                                                                   &lt 6 V   &mo 6
+                                                                   &osm 6             &mo 6
 //                                                                ╰───────────╯ ╰──╯ ╰──────────╯                                           
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
